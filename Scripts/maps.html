@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Google Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">    
+        </style>        
+    </head>    
+    <body>        
+       
+        <div 
+        id="map"
+        style="padding: 10px; height:500px; width:100%;">
+        </div>
+        
+        
+        <script type="text/javascript">
+                
+        function initMap() { 
+
+            const latitude = -23.6545809; // YOUR LATITUDE VALUE
+            const longitude = -46.5408906; // YOUR LONGITUDE VALUE
+            
+            const myLatLng = {lat: latitude, lng: longitude};
+            
+            const map = new google.maps.Map(document.getElementById('map'), {
+              center: myLatLng,
+              zoom: 15                   
+            });
+                    
+            const marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              //title: 'Hello World'
+              
+              // setting latitude & longitude as title of the marker
+              // title is shown when you hover over the marker
+              title: 'Pizzaria de boa' 
+            });            
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9ByRacfqRUwBiyX8dzciTEGISpfJqnOk&callback=initMap"async defer></script>
+    </body>    
+</html>
